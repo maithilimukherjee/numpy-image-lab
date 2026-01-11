@@ -4,6 +4,9 @@ from src.normalize import normalize
 from src.brightness_contrast import adjustBrightness, adjustContrast
 from src.flip import flip_horizontal, flip_vertical
 from src.blur import blur_image
+from src.edge_detection import detect_edges
+from src.blur_vectorized import blur_image_vectorized
+from src.edge_vectorized import detect_edges_vectorized
 
 img = load_image("images/sample.jpeg")
 print(img.shape)
@@ -29,3 +32,12 @@ show_image(vFlip,cmap="gray")
 
 blurPic = blur_image(grayPic)
 show_image(blurPic, cmap="gray")
+
+edgePic = detect_edges(grayPic)
+show_image(edgePic, cmap="gray")
+
+blurPic = blur_image_vectorized(grayPic)
+show_image(blurPic, cmap="gray")
+
+edgePic = detect_edges_vectorized(grayPic)
+show_image(edgePic, cmap="gray")
